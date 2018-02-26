@@ -1,0 +1,23 @@
+﻿@model AuthorizationApp.Models.AuthorizationModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+        window.adalConfig = {
+            instance: 'https://login.microsoftonline.com/',
+            tenantId: '@Model.TenantId',
+            clientId: '@Model.ClientId',
+            postLogoutRedirectUri: window.location.origin + '/home/signout',
+            cacheLocation: 'localStorage'
+        };
+    </script>
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/adal.min.js"></script>
+    <script src="~/js/@Model.ScriptBundleName"></script>
+    <title>Authorization App</title>
+</head>
+<body>
+</body>
+</html>

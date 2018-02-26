@@ -1,0 +1,14 @@
+<h1>Homepage</h1>
+<div class="user-status">
+    <div class="welcome">
+        <p *ngIf="loggedIn">Welcome, {{userName}}!</p>
+        <p *ngIf="!loggedIn">Please log in!</p>
+    </div>
+    <div class="buttons">
+        <button *ngIf="loggedIn" (click)="logout()">Log out</button>
+        <button *ngIf="!loggedIn" (click)="login()">Log in</button>
+    </div>
+</div>
+<div *ngIf="loggedIn" class="content-container">
+    <img src='assets/secret.png' />
+</div>
